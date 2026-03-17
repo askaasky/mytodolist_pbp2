@@ -2,7 +2,7 @@
 box-sizing:border-box;
 margin:0;
 padding:0;
-font-family:Arial, sans-serif;
+font-family:'Inconsolata', monospace;
 }
 
 body{
@@ -25,19 +25,25 @@ box-shadow:0 15px 30px rgba(0,0,0,0.08);
 h1{
 text-align:center;
 margin-bottom:25px;
+font-weight:700;
+letter-spacing:1px;
 }
 
+/* 🔥 FIX layout biar gak keluar */
 .input-area{
 display:flex;
 gap:10px;
+flex-wrap:wrap;
 }
 
-input{
+.input-area input{
 flex:1;
-padding:12px;
-border-radius:10px;
-border:1px solid #ddd;
-font-size:14px;
+min-width:120px;
+}
+
+#dateInput{
+flex:1;
+min-width:120px;
 }
 
 button{
@@ -48,6 +54,7 @@ background:black;
 color:white;
 cursor:pointer;
 font-size:14px;
+white-space:nowrap;
 }
 
 button:hover{
@@ -62,20 +69,42 @@ li{
 list-style:none;
 display:flex;
 align-items:center;
-gap:12px;
 background:#f7f7f7;
 padding:12px 15px;
 margin-bottom:12px;
 border-radius:10px;
+gap:8px;
 }
 
-li span{
+li input[type="checkbox"]{
+margin-right:6px;
+}
+
+li div{
+display:flex;
+flex-direction:column;
+justify-content:center;
 flex:1;
 }
 
 .completed{
 text-decoration:line-through;
 color:#888;
+}
+
+.date{
+font-size:12px;
+color:#555;
+}
+
+.overdue{
+color:red;
+font-weight:600;
+}
+
+.today{
+color:orange;
+font-weight:600;
 }
 
 .delete{
